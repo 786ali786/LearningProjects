@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { ProductsService } from '../services/products.service';
+import { SignalrService } from '../services/signalr.service';
+
 
 @Component({
   selector: 'app-home',
@@ -11,18 +13,29 @@ import { ProductsService } from '../services/products.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private productsService : ProductsService){
+  constructor(private productsService : ProductsService, private signalR : SignalrService){
 
   }
 
   ngOnInit(): void {
     
-    this.productsService.
-    getProducts("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllClients",{page:0,perPage:4})
-    .subscribe((products : any)=>{
-     console.log(products);
+    this.signalR.startConnection();
 
-    });
+    setTimeout(() => {
+      this.signalR.askServerListener();
+      this.signalR.askServer();
+    }, 2000);
+
+    // this.productsService.
+    // getProducts("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllClients",{page:0,perPage:4})
+    // .subscribe((products : any)=>{
+    //  console.log(products);
+    // });
+
+  }
+  
+  ngOnDestroy() {
+    this.signalR.hubConnection.off("askServerResponse");
   }
 
 }

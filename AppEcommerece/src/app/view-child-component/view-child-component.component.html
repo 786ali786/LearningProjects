@@ -1,0 +1,24 @@
+<p>view-child-component works!</p>
+
+<div class="container">
+
+
+    <div class="item">
+        <label for="name">Name </label>
+        <input type="text" id="name" class="form-control"  #txt />
+    </div>
+
+    <div class="item">
+        <app-alertcomponent [alertType]="'success'" [message]="'this is alert'"></app-alertcomponent>
+    </div>
+
+<div class =item>
+    <label for="drop">DropDownlis</label>
+    <select id="drop" class="form-control">
+        <option  value="0">-- Select -- </option>
+        <option value="1">-- Pak -- </option>
+        <option value="2">-- Ind -- </option>
+        <option selected="selected" value="3">-- USA -- </option>    
+    </select>
+</div>
+</div>

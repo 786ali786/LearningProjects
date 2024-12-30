@@ -15,7 +15,7 @@ startConnection = () => {
 
 
   const connection = new SignalR.HubConnectionBuilder()
-  .withUrl('https://localhost:5001/toastr',{
+  .withUrl('http://localhost:5001/api/home/GetHubMessages',{
     
     skipNegotiation :true,
     transport : SignalR.HttpTransportType.WebSockets
@@ -28,6 +28,17 @@ startConnection = () => {
 
     console.log('Error While starting Connection:' + error);
 
+  });
+}
+
+askServer(){
+  this.hubConnection.invoke("askServer","hey")
+      .catch(err => console.log(err));
+}
+
+askServerListener(){
+  this.hubConnection.on("askServerResponse",(someText)=>{
+    console.log(someText);
   });
 }
 
