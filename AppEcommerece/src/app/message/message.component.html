@@ -1,0 +1,21 @@
+<h1>Messages</h1>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur, 
+    perspiciatis necessitatibus animi voluptatem corporis omnis similique accusamus 
+    debitis explicabo nesciunt facilis rerum perferendis ipsum, illo architecto ut
+     veritatis beatae. SignalR</p>
+     
+    <br>
+    <hr>
+
+     <div *ngIf="showimage">
+        Click on bell to show all {{signaldata.length}} messages
+        <img src="assets/notification.png"  height="30px" width="30px"  (click)="ShowMessages()" />
+     </div>
+
+     <div *ngIf="!showimage">
+    
+        <h2 *ngFor="let i of signaldata">
+            {{i.information}}
+        </h2>
+     </div>

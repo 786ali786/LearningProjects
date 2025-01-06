@@ -7,3 +7,26 @@
     box-sizing: border-box;
 }
 
+.active{
+    
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px;
+    color: rgb(255, 0, 0);
+    background-color: black;
+
+}
+
+.active:hover {
+
+    background-color: gray;
+}
+
+li {
+    margin: 5px;
+}
+li a{
+    margin: 5px;
+}

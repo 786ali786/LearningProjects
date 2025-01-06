@@ -1,0 +1,22 @@
+<h1> Send Message </h1>
+
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut inventore porro 
+    deserunt sint iure similique nulla reiciendis, nisi, magnam at ea, 
+    aut ipsum molestias quia? Soluta rerum repellendus atque reprehenderit.</p>
+
+<input type="button" (click)="senddata()" value="Send Data"/>
+    <br>
+    <hr>
+    
+    <div *ngIf="showimage">
+
+        Click on ell to show all {{signaldata.length}}
+        messages 
+        <img src="assets/notification.png" height="30px" width="30px" (click)="showMessage()">
+    </div>
+
+    <div *ngIf="!showimage">
+        <h2 *ngFor="let i of signaldata">
+            {{i.information}}
+        </h2>
+    </div>

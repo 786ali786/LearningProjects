@@ -5,4 +5,26 @@
 <app-footers></app-footers> -->
 
 
-<app-view-child-component></app-view-child-component>
+<!-- <app-view-child-component></app-view-child-component> -->
+
+<ul style="display: flex;">
+
+    <li>
+        <a [routerLink]="'/home'" routerLinkActive="active"> Home </a>
+    </li>
+    <li>
+        <a routerLink="/message" routerLinkActive="active"> Message </a>
+    </li>
+    <li>
+        <a [routerLink]="'/sendmessage'" routerLinkActive="active"> Send Message </a>
+    </li>
+    <li>
+        <a routerLink="/viewChildComponent" routerLinkActive="active">View Child</a>
+    </li>
+</ul>
+
+<div>
+    
+<router-outlet></router-outlet>
+
+</div>

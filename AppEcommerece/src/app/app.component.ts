@@ -12,7 +12,7 @@ import { ViewChildComponentComponent } from "./view-child-component/view-child-c
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,  ViewChildComponentComponent],
+  imports: [CommonModule,  RouterOutlet,RouterLink,RouterLinkActive],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
